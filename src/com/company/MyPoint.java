@@ -1,19 +1,19 @@
 package com.company;
 
-public class My_Point {
+public class MyPoint {
     private double x, y;
 
-    public My_Point(){
+    public MyPoint(){
         x=0;
         y=0;
     }
 
-    public My_Point(double x, double y){
+    public MyPoint(double x, double y){
         this.x=x;
         this.y=y;
     }
 
-    public My_Point(My_Point in){
+    public MyPoint(MyPoint in){
         x=in.x;
         y=in.y;
     }
@@ -31,15 +31,15 @@ public class My_Point {
         this.y=y;
     }
 
-    public double distance(My_Point in){
+    public double distance(MyPoint in){
         return Math.sqrt(Math.pow(x-in.x, 2)+Math.pow(y-in.y, 2));
     }
 
-    public My_Point getLocation(){
+    public MyPoint getLocation(){
         return this;
     }
 
-    public boolean equals(My_Point in){
+    public boolean equals(MyPoint in){
         return x-in.x<1E-10 && y-in.y<1E-10;
     }
 
