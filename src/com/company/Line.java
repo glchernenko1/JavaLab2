@@ -22,7 +22,7 @@ public class Line {
         }
     }
 
-    //Задания прямой по общему виду уравнения прямой
+    //Задания прямой по общему виду уравнения прямой.
     public Line(double a, double b, double c){
         point1=new My_Point(1, -c-a);
         point2=new My_Point(-1, -c+a);
@@ -37,17 +37,17 @@ public class Line {
                 '}';
     }
 
-    //Коэффициент при x в общее уравнение  прямой
+    //Коэффициент при x в общее уравнение  прямой.
     public double coefficientA(){
         return point1.getY()-point2.getY();
     }
 
-    //Коэффициент при y в общее уравнение прямой
+    //Коэффициент при y в общее уравнение прямой.
     public double coefficientB(){
         return point2.getX()-point1.getX();
     }
 
-    //Свободный коэффициент  в общее уравнение прямой
+    //Свободный коэффициент  в общее уравнение прямой.
     public double coefficientC(){
         return point1.getX()*point2.getY()-point2.getX()*point1.getY();
     }
