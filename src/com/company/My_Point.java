@@ -51,5 +51,4 @@ public class My_Point {
                 '}';
     }
 
-
 }
