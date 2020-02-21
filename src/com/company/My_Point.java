@@ -40,7 +40,7 @@ public class My_Point {
     }
 
     public boolean equals(My_Point in){
-        return x==in.x && y==in.y;
+        return x-in.x<1E-10 && y-in.y<1E-10;
     }
 
     @Override
