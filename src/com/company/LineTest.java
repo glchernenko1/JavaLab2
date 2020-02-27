@@ -26,6 +26,7 @@ class LineTest {
     @Test
     void isParallelLines() {
         assertTrue(test1.isParallelLines(test2));
+        assertTrue(test1.isParallelLines(test1));
         assertFalse(test1.isParallelLines(test3));
     }
 
@@ -33,6 +34,7 @@ class LineTest {
     void isPerpendicular() {
         assertTrue(test1.isPerpendicular(test3));
         assertFalse(test1.isPerpendicular(test2));
+        assertFalse(test1.isPerpendicular(test1));
     }
 
     @Test
