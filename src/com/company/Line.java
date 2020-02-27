@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Objects;
+
 public class Line {
     private String name;
     private MyPoint point1;
@@ -92,6 +94,17 @@ public class Line {
         point1=new MyPoint(1, -c-a);
         point2=new MyPoint(-1, -c+a);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Line line = (Line) o;
+        return point1.equals(line.point1) &&
+                point2.equals(line.point2);
+    }
+
+
 
 
 }

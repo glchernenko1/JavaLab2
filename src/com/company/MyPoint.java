@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Objects;
+
 public class MyPoint {
     private double x, y;
 
@@ -39,9 +41,15 @@ public class MyPoint {
         return this;
     }
 
-    public boolean equals(MyPoint in){
-        return x-in.x<1E-10 && y-in.y<1E-10;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MyPoint myPoint = (MyPoint) o;
+        return Double.compare(myPoint.x, x) == 0 &&
+                Double.compare(myPoint.y, y) == 0;
     }
+
 
     @Override
     public String toString() {
