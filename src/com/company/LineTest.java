@@ -37,7 +37,7 @@ class LineTest {
 
     @Test
     void equals(){
-        assertFalse(test1.equals(test2));
-        assertTrue(test1.equals(test1));
+        assertNotEquals(test1, test2);
+        assertEquals(test1, test1);
     }
 }
