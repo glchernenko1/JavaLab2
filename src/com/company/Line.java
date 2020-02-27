@@ -101,7 +101,7 @@ public class Line {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Line line = (Line) o;
-        return this.isParallelLines(line)&& Math.abs(coefficientC()-line.coefficientC())<1E-10;
+        return this.isParallelLines(line) && Math.abs(coefficientC()-line.coefficientC())<1E-10;
     }
 
 
