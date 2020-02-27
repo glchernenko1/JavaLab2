@@ -55,7 +55,8 @@ public class Line {
     }
 
     public Boolean isParallelLines(Line in){
-        return Math.abs(this.coefficientA()-in.coefficientA())<1E-10 && Math.abs(this.coefficientB()-in.coefficientB())<1E-10;
+        return Math.abs(this.coefficientA()-in.coefficientA())<1E-10 &&
+                Math.abs(this.coefficientB()-in.coefficientB())<1E-10;
     }
 
     public Boolean isPerpendicular(Line in){
