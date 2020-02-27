@@ -55,11 +55,11 @@ public class Line {
     }
 
     public Boolean isParallelLines(Line in){
-        return this.coefficientA()-in.coefficientA()<1E-10 && this.coefficientB()-in.coefficientB()<1E-10;
+        return Math.abs(this.coefficientA()-in.coefficientA())<1E-10 && Math.abs(this.coefficientB()-in.coefficientB())<1E-10;
     }
 
     public Boolean isPerpendicular(Line in){
-        return this.coefficientA()*in.coefficientA()+this.coefficientB()*in.coefficientB()<1E-10;
+        return Math.abs(this.coefficientA()*in.coefficientA()+this.coefficientB()*in.coefficientB())<1E-10;
     }
 
     public MyPoint getPoint1() {
@@ -100,8 +100,7 @@ public class Line {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Line line = (Line) o;
-        return point1.equals(line.point1) &&
-                point2.equals(line.point2);
+        return this.isParallelLines(line)&& Math.abs(coefficientC()-line.coefficientC())<1E-10;
     }
 
 
