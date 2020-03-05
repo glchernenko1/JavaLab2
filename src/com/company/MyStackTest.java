@@ -1,5 +1,6 @@
 package com.company;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -37,6 +38,11 @@ class MyStackTest {
         test1.push(-2.);
         test1.pop();
         assertEquals(test1.peek(), 3.1415, 1E-5);
+        test1.pop();
+        Exception exception = assertThrows(IndexOutOfBoundsException.class,()->test1.pop());
+        assertEquals("Stack empty", exception.getMessage());
+
+
     }
 
 }

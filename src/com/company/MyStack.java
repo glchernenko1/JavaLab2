@@ -1,28 +1,47 @@
 package com.company;
 
+import java.lang.reflect.Array;
+import java.util.Objects;
 import java.util.Vector;
 
 public class MyStack<T> {
-    private Vector<T> data;
+    private T[] data;
+    private int size;
 
     public MyStack(){
-        data=new Vector<T>();
+        size=0;
+        data= (T[]) new  Object [size];
     }
 
 
     public void push(T in){
-        data.add(0, in);
+        T[] tmp = (T[]) new  Object [size+1];
+        tmp[0]=in;
+        for (int i = 0; i < size; i++) {
+            tmp[i+1] = data[i];
+        }
+        ++size;
+        data=tmp;
     }
 
     public T peek(){
-        return data.firstElement();
+        return data[0];
     }
 
     public void pop(){
-        data.remove(0);
+        if (isEmpty()) throw new IndexOutOfBoundsException("Stack empty");
+        else {
+            T[] tmp = (T[]) new Object[size - 1];
+            for (int i = 0; i < size - 1; i++) {
+                tmp[i] = data[i + 1];
+            }
+
+            --size;
+            data = tmp;
+        }
     }
 
     public boolean isEmpty(){
-        return data.isEmpty();
+        return size==0;
     }
 }
