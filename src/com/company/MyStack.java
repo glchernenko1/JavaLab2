@@ -24,7 +24,7 @@ public class MyStack<T> {
         data=tmp;
     }
 
-    public T peek(){
+    public T peak(){
         return data[0];
     }
 

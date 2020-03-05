@@ -19,9 +19,9 @@ class MyStackTest {
     void push() {
         test1.push(3.1415);
         assertFalse(test1.isEmpty());
-        assertEquals(test1.peek(), 3.1415, 1E-5);
+        assertEquals(test1.peak(), 3.1415, 1E-5);
         test1.push(-2.);
-        assertEquals(test1.peek(), -2., 1E-5);
+        assertEquals(test1.peak(), -2., 1E-5);
 
     }
 
@@ -37,7 +37,7 @@ class MyStackTest {
         test1.push(3.1415);
         test1.push(-2.);
         test1.pop();
-        assertEquals(test1.peek(), 3.1415, 1E-5);
+        assertEquals(test1.peak(), 3.1415, 1E-5);
         test1.pop();
         Exception exception = assertThrows(IndexOutOfBoundsException.class,()->test1.pop());
         assertEquals("Stack empty", exception.getMessage());
