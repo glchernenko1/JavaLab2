@@ -25,6 +25,7 @@ public class MyStack<T> {
     }
 
     public T peak(){
+        if (isEmpty()) throw new IndexOutOfBoundsException("Stack empty");
         return data[0];
     }
 
@@ -43,5 +44,6 @@ public class MyStack<T> {
 
     public boolean isEmpty(){
         return size==0;
+
     }
 }
