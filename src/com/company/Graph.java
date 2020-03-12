@@ -8,13 +8,13 @@ public class Graph<T> {
     public  Graph(){
         data=null;
         size=0;
-        parts= new  Graph[0];
+        parts= (Graph<T>[]) new  Graph[0];
     }
 
     public  Graph(T in){
         data=in;
         size=0;
-        parts= new  Graph[0];
+        parts=  (Graph<T>[]) new  Graph[0];
     }
 
     public void addData(T in){
@@ -22,7 +22,7 @@ public class Graph<T> {
     }
 
     public void  add(Graph<T> in){
-        Graph<T>[] tmp = new  Graph[size+1];
+        Graph<T>[] tmp = (Graph<T>[]) new  Graph[size+1];
         tmp[size]=in;
         for (int i = 0; i < size-1; i++) {
             tmp[i] = parts[i+1];
@@ -37,7 +37,7 @@ public class Graph<T> {
         else
             if (index>=size|| index<0) throw new IndexOutOfBoundsException("Удаление за пределами массива(");
             else {
-                Graph<T>[] tmp = new Graph[size - 1];
+                Graph<T>[] tmp =(Graph<T>[]) new Graph[size - 1];
                 for (int i = 0; i < size; i++) {
 
                     int j=i-flag;
