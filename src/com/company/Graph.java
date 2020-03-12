@@ -1,6 +1,6 @@
 package com.company;
 
-public class Graph<T> {
+public class  Graph<T> {
     private T data;
     private  Graph<T>[]  parts;
     private  int size;
@@ -82,6 +82,15 @@ public class Graph<T> {
 
     public int getSize(){
         return size;
+    }
+
+    public int ega(Graph<T> in){
+        if (isAlone()) return 0;
+        int count=0;
+        if (isFinde(in)) count=1;
+        for (Graph<T> graph:parts)
+            count+=graph.ega(in);
+        return count;
     }
 
 

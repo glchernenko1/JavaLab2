@@ -11,11 +11,17 @@ class GraphTest {
     private  Graph<Integer> tmp1;
     private  Graph<Integer> tmp2;
     private  Graph<Integer> tmp3;
+    private  Graph<Integer> tmp4;
+    private  Graph<Integer> tmp5;
+    private  Graph<Integer> tmp6;
     @BeforeEach
     void setUp() {
-        tmp1= new Graph<Integer>(10);
-        tmp2= new Graph<Integer>(11);
-        tmp3= new Graph<Integer>(9);
+        tmp1= new Graph<Integer>(1);
+        tmp2= new Graph<Integer>(2);
+        tmp3= new Graph<Integer>(3);
+        tmp4= new Graph<Integer>(4);
+        tmp5= new Graph<Integer>(5);
+        tmp6= new Graph<Integer>(6);
     }
 
 
@@ -53,4 +59,17 @@ class GraphTest {
         assertFalse(tmp1.isFinde(tmp2));
 
     }
+    @Test
+    void ega(){
+        tmp1.add(tmp2);
+        tmp1.add(tmp3);
+        tmp2.add(tmp4);
+        tmp3.add(tmp4);
+        tmp3.add(tmp5);
+        tmp4.add(tmp5);
+        tmp4.add(tmp6);
+        tmp5.add(tmp6);
+        System.out.println(tmp1.ega(tmp6));
+    }
+
 }
