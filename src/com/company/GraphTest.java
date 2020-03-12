@@ -31,10 +31,9 @@ class GraphTest {
     void del() {
         tmp1.add(tmp2);
         tmp1.add(tmp3);
-        tmp1.del(0);
+        tmp1.del(tmp2);
         assertEquals(tmp1.getSize(),1);
-        assertThrows(IndexOutOfBoundsException.class,()->tmp1.del(2));
-        assertThrows(IndexOutOfBoundsException.class,()->tmp1.del(-2));
+
     }
 
     @Test
@@ -42,5 +41,16 @@ class GraphTest {
         assertTrue(tmp1.isAlone());
         tmp1.add(tmp2);
         assertFalse(tmp1.isAlone());
+    }
+    @Test
+    void  isFiend(){
+        tmp1.add(tmp2);
+        tmp1.add(tmp3);
+        tmp1.isFinde(tmp2);
+        assertTrue(tmp1.isFinde(tmp2));
+        tmp1.del(tmp2);
+        tmp1.isFinde(tmp2);
+        assertFalse(tmp1.isFinde(tmp2));
+
     }
 }
