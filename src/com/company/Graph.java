@@ -1,4 +1,6 @@
 package com.company;
+import java.io.*;
+
 
 public class  Graph<T> {
     private T data;
@@ -84,14 +86,21 @@ public class  Graph<T> {
         return size;
     }
 
-    public int ega(Graph<T> in){
+    public int ega(Graph<T> in)throws Exception{
         if (isAlone()) return 0;
         int count=0;
         if (isFinde(in)) count=1;
-        for (Graph<T> graph:parts)
-            count+=graph.ega(in);
+        for (Graph<T> graph:parts) {
+            count += graph.ega(in);
+        }
+        FileWriter fw = new FileWriter( "task.txt", true );
+        fw.write("Вершина: "+data + " "+ count+'\n');
+        fw.close();
+
         return count;
     }
+
+
 
 
 }

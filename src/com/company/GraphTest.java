@@ -14,6 +14,8 @@ class GraphTest {
     private  Graph<Integer> tmp4;
     private  Graph<Integer> tmp5;
     private  Graph<Integer> tmp6;
+    private  Graph<Integer> tmp7;
+    private  Graph<Integer> tmp8;
     @BeforeEach
     void setUp() {
         tmp1= new Graph<Integer>(1);
@@ -22,6 +24,9 @@ class GraphTest {
         tmp4= new Graph<Integer>(4);
         tmp5= new Graph<Integer>(5);
         tmp6= new Graph<Integer>(6);
+        tmp7= new Graph<Integer>(7);
+        tmp8= new Graph<Integer>(8);
+
     }
 
 
@@ -61,15 +66,24 @@ class GraphTest {
     }
     @Test
     void ega(){
-        tmp1.add(tmp2);
-        tmp1.add(tmp3);
+        tmp2.add(tmp8);
         tmp2.add(tmp4);
-        tmp3.add(tmp4);
-        tmp3.add(tmp5);
-        tmp4.add(tmp5);
+        tmp8.add(tmp7);
+        tmp8.add(tmp1);
         tmp4.add(tmp6);
-        tmp5.add(tmp6);
-        System.out.println(tmp1.ega(tmp6));
+        tmp4.add(tmp1);
+        tmp7.add(tmp3);
+        tmp7.add(tmp6);
+        tmp1.add(tmp3);
+        tmp6.add(tmp5);
+        tmp3.add(tmp5);
+        try {
+            System.out.println(tmp2.ega(tmp5));
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 
 }
