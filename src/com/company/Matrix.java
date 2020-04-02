@@ -93,13 +93,25 @@ public class Matrix {
     }
 
     public Matrix multiply(@NotNull Matrix in){
-        if (m!=in.n) throw new IllegalArgumentException ("Не квадратная");
-        Matrix tmp= new Matrix(n,m);
-        for (int i=0; i<m; ++i)
-            for (int j=0; j<in.n; ++j)
-                for (int k=0; k<n; ++k)
+        if (m!=in.n) throw new IllegalArgumentException ("размеры не совпадают");
+        Matrix tmp= new Matrix(n,in.m);
+        for (int i=0; i<n; ++i)
+            for (int j=0; j<in.m; ++j)
+                for (int k=0; k<m; ++k)
                     tmp.data[i][j] += data[i][k] * in.data[k][j];
         return tmp;
+    }
+
+    public boolean isSymmetrical(){
+        if (m!=n) throw new IllegalArgumentException ("Не квадратная");
+        boolean flag=true;
+        for (int i=0;i<n & flag; ++i)
+            for (int j=1+i; j<n & flag; ++j) {
+                double tmp1 = data[i][j];
+                double tmp2 = data[j][i];
+                flag = data[j][i] == data[i][j];
+            }
+        return flag;
     }
 
 
